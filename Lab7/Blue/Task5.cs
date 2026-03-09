@@ -36,7 +36,7 @@ namespace Lab7.Blue
             private string _name;
             private Sportsman[] _sportsmens;
             public string Name => _name;
-            public Sportsman[] Sportsmen    
+            public Sportsman[] Sportsmen
             {
                 get
                 {
@@ -53,7 +53,10 @@ namespace Lab7.Blue
                     int sum = 0;
                     foreach (Sportsman sportsmen in _sportsmens)
                     {
-                        sum += 6 - sportsmen.Place;
+                        if (sportsmen.Place <= 5)
+                        {
+                            sum += 6 - sportsmen.Place;
+                        }
                     }
                     return sum;
                 }
